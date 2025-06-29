@@ -3,20 +3,38 @@
 		"columns": {
 			"tags": {
 				"type": "multi-select",
-				"options": [
-					{"name": "one", "color": "blue"},
-					{"name": "two", "color": "gray"},
-					{"name": "three", "color": "yellow"},
-					{"name": "four", "color": "magenta"},
-					{"name": "five", "color": "green"}
-				]
+				"config": {
+					"options": [
+						{"name": "one", "color": "blue"},
+						{"name": "two", "color": "gray"},
+						{"name": "three", "color": "yellow"},
+						{"name": "four", "color": "magenta"},
+						{"name": "five", "color": "green"}
+					]
+				}
 			}
 		}
 	},
 	"rows": [
-		{"id": 1, "name": "hi1", "tags": ["one", "two"]},
-		{"id": 2, "name": "hi2", "tags": ["three", "two"]},
-		{"id": 3, "name": "hi3", "tags": ["three", "four"]},
-		{"id": 4, "name": "hi4", "tags": ["four", "five"]}
+		{
+			"id": 1,
+			"name": "hi1",
+			"properties": [{"name": "tags", "value": ["one", "two"]}]
+		},
+		{
+			"id": 2,
+			"name": "hi2",
+			"properties": [{"name": "tags", "value": ["two", "three"]}]
+		},
+		{
+			"id": 3,
+			"name": "hi3",
+			"properties": [{"name": "tags", "value": ["three", "four"]}]
+		},
+		{
+			"id": 4,
+			"name": "hi4",
+			"properties": [{"name": "tags", "value": ["four", "five"]}]
+		}
 	]
 }
