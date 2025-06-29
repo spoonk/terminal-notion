@@ -12,6 +12,10 @@
 						{"name": "five", "color": "green"}
 					]
 				}
+			},
+			"note": {
+				"type": "text",
+				"config": {}
 			}
 		}
 	},
@@ -24,7 +28,10 @@
 		{
 			"id": 2,
 			"name": "hi2",
-			"properties": [{"name": "tags", "value": ["two", "three"]}]
+			"properties": [
+				{"name": "note", "value": "this is a note"},
+				{"name": "tags", "value": ["two", "three"]}
+			]
 		},
 		{
 			"id": 3,
