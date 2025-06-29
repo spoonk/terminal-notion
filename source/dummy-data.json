@@ -1,0 +1,22 @@
+{
+	"config": {
+		"columns": {
+			"tags": {
+				"type": "multi-select",
+				"options": [
+					{"name": "one", "color": "blue"},
+					{"name": "two", "color": "gray"},
+					{"name": "three", "color": "yellow"},
+					{"name": "four", "color": "magenta"},
+					{"name": "five", "color": "green"}
+				]
+			}
+		}
+	},
+	"rows": [
+		{"id": 1, "name": "hi1", "tags": ["one", "two"]},
+		{"id": 2, "name": "hi2", "tags": ["three", "two"]},
+		{"id": 3, "name": "hi3", "tags": ["three", "four"]},
+		{"id": 4, "name": "hi4", "tags": ["four", "five"]}
+	]
+}
