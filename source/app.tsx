@@ -1,14 +1,15 @@
-import React from 'react';
-import {Text} from 'ink';
+import React, {useState} from 'react';
+import {page} from './hooks/use-current-page.js';
+import {PageContext} from './context.js';
+import {PageSwitcher} from './page-switcher.js';
 
-type Props = {
-	name: string | undefined;
-};
+export default function App() {
+	const [currentPage, setCurrentPage] = useState<page>('home');
+	const pageContext = {page: currentPage, setPage: setCurrentPage};
 
-export default function App({name = 'Stranger'}: Props) {
 	return (
-		<Text>
-			Hello, <Text color="green">{name}</Text>
-		</Text>
+		<PageContext.Provider value={pageContext}>
+			<PageSwitcher></PageSwitcher>
+		</PageContext.Provider>
 	);
 }
