@@ -1,7 +1,16 @@
 import {createContext} from 'react';
-import {page} from './hooks/use-current-page.js';
+//import {Page} from './hooks/use-current-page.js';
 
-export const PageContext = createContext<{page: page; setPage: any}>({
+export type Page = 'table' | 'home' | 'note';
+export const PageContext = createContext<{page: Page; setPage: any}>({
 	page: 'home',
 	setPage: () => {},
+});
+
+export const CurrentNoteContext = createContext<{
+	content: string | null;
+	setContent: any;
+}>({
+	content: null,
+	setContent: () => {},
 });

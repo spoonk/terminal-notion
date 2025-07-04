@@ -18,8 +18,16 @@ interface Props {
 }
 
 export const Table = (props: Props) => {
+	//useInput((input, key) => {
+	//	if (input === '\t') {
+	//		console.log('tab');
+	//	} else {
+	//		console.log(input, key);
+	//	}
+	//});
+
 	return (
-		<Box flexDirection="column">
+		<Box flexDirection="column" flexGrow={1}>
 			{props.rows.map(row => (
 				<Row
 					key={row.id}

@@ -22,12 +22,12 @@
 	"rows": [
 		{
 			"id": 1,
-			"name": "hi1",
+			"name": "note one",
 			"properties": [{"name": "tags", "value": ["one", "two"]}]
 		},
 		{
 			"id": 2,
-			"name": "hi2",
+			"name": "note two",
 			"properties": [
 				{"name": "note", "value": "this is a note"},
 				{"name": "tags", "value": ["two", "three"]}
@@ -35,12 +35,12 @@
 		},
 		{
 			"id": 3,
-			"name": "hi3",
+			"name": "note three",
 			"properties": [{"name": "tags", "value": ["three", "four"]}]
 		},
 		{
 			"id": 4,
-			"name": "hi4",
+			"name": "note four",
 			"properties": [{"name": "tags", "value": ["four", "five"]}]
 		}
 	]

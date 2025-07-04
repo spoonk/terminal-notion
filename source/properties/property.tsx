@@ -7,7 +7,12 @@ import {
 } from './multi-select.js';
 import {TextProperty} from './text.js';
 
-export type PropertyType = 'select' | 'multi-select' | 'text' | 'bad';
+export type PropertyType =
+	| 'select'
+	| 'multi-select'
+	| 'text'
+	| 'bad'
+	| 'status';
 
 interface Props {
 	type: PropertyType;

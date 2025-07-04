@@ -1,4 +1,4 @@
-import {Box, Spacer, Text} from 'ink';
+import {Box, Spacer, Text, useFocus, useInput} from 'ink';
 import React from 'react';
 import {Property, PropertyType} from './properties/property.js';
 interface Props {
@@ -10,11 +10,18 @@ interface Props {
 
 export const Row = ({name, rowProperties, colConfig}: Props) => {
 	const validProperties = rowProperties.filter(({name}) => colConfig[name]);
+	const {isFocused} = useFocus();
+	useInput((_, key) => {
+		if (key.return && isFocused) {
+			console.log(name);
+		}
+	});
 
 	return (
 		<Box flexDirection="row">
 			<Box padding={1}>
-				<Text color={'gray'}>{name}</Text>
+				<Text color={'white'}>{isFocused ? '|  ' : '   '}</Text>
+				<Text color={isFocused ? 'white' : 'gray'}>{name}</Text>
 			</Box>
 			<Spacer></Spacer>
 			{validProperties.map(({name, value}) => (
