@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import React from 'react';
-import {render} from 'ink';
+//import {render} from 'ink';
 //import meow from 'meow';
 import App from './app.js';
-//import {withFullScreen} from 'fullscreen-ink';
+import {withFullScreen} from 'fullscreen-ink';
 
 //const cli = meow(
 //	`
@@ -27,5 +27,5 @@ import App from './app.js';
 //	},
 //);
 //
-render(<App />);
-//withFullScreen(<App />).start();
+//render(<App />);
+withFullScreen(<App />).start();

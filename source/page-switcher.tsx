@@ -1,19 +1,17 @@
-import React, {useContext} from 'react';
-//import {useDBList} from './hooks/use-db-list.js';
-import {Box, Text} from 'ink';
-import {PageContext} from './context.js';
-//import {Demo} from './select-table.js';
+import React from 'react';
+import {Box} from 'ink';
 import {JSONTable} from './json-table.js';
+import {useAppState} from './stores/app-state.js';
+import {NoteModal} from './note/note-modal.js';
 
 export const PageSwitcher = () => {
-	//const tables = useDBList();
-	const {page} = useContext(PageContext);
+	const currentDB = useAppState(state => state.currentDB);
+	const currentNote = useAppState(state => state.currentNote);
 
 	return (
-		<Box>
-			{page === 'home' && <Text>You are home</Text>}
-			{page === 'table' && <JSONTable />}
-			{page === 'note' && <JSONTable />}
+		<Box flexGrow={1} justifyContent="center" alignSelf="center">
+			{currentDB && !currentNote && <JSONTable />}
+			{currentNote && <NoteModal note={currentNote} />}
 		</Box>
 	);
 };

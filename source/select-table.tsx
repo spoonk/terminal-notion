@@ -1,6 +1,5 @@
 import React from 'react';
 import SelectInput from 'ink-select-input';
-//import {useStdout} from 'ink';
 import {listTablesOutput} from './query-types.js';
 
 interface props {
@@ -10,7 +9,6 @@ interface props {
 export const Demo = ({tables}: props) => {
 	const handleSelect = (item: any) => {
 		console.log(item.value);
-		changePage('table');
 	};
 
 	const items = tables.map(({name}) => ({label: name, value: name}));

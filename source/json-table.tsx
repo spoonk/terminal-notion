@@ -1,28 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import {Table} from './table.js';
+import React  from 'react';
+import {Table} from './views/table-view/table-view.js';
 import data from './dummy-data.json' with {type: 'json'};
 import _ from 'lodash'
-import { PropertyType } from './properties/property.js';
+import { ColumnConfiguration } from './types.js';
 
-interface dummyDataRow {
-	id: number;
-	name: string;
-	properties: {
-		name: string; value: unknown
-	}[]
-}
+//interface dummyDataRow {
+//	id: number;
+//	name: string;
+//	properties: {
+//		name: string; value: unknown
+//	}[]
+//}
 
 interface dummyDataCols {
-	columns: {
-		[key: string]: {type: PropertyType, config: unknown}
-	}
+	columns: ColumnConfiguration
 }
 
 export const JSONTable = () => {
-	const [rows, setRows] = useState<dummyDataRow[]>([]);
-	useEffect(() => {
-		setRows(data.rows);
-	}, []);
+	//const setConfig = useAppState(state => state.setCurrentColConfig)
+	//	setConfig(data.config.columns)
 
-	return <Table rows={rows} config={data.config as dummyDataCols}></Table>;
+	return <Table rows={data.rows} config={data.config as dummyDataCols}></Table>;
 };

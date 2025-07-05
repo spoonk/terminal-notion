@@ -6,28 +6,27 @@ import {
 	MultiSelectValue,
 } from './multi-select.js';
 import {TextProperty} from './text.js';
-
-export type PropertyType =
-	| 'select'
-	| 'multi-select'
-	| 'text'
-	| 'bad'
-	| 'status';
+import {useAppState} from '../stores/app-state.js';
 
 interface Props {
-	type: PropertyType;
+	name: string;
 	value: unknown;
-	config: unknown;
 }
 
 // this is a factory for properties based on their types
-export const Property = ({type, value, config}: Props) => {
+export const Property = ({name, value}: Props) => {
+	const allConfig = useAppState(state => state.currentDataColConfig);
+	const colConfig = allConfig?.[name];
+
+	const type = colConfig?.type;
+	const propertyConfig = colConfig?.config;
+
 	return (
 		<Box>
 			{type === 'multi-select' && (
 				<MultiSelect
 					value={value as MultiSelectValue}
-					config={config as MultiSelectConfig}
+					config={propertyConfig as MultiSelectConfig}
 				/>
 			)}
 			{type === 'text' && <TextProperty text={value as string}></TextProperty>}
